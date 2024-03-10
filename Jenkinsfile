@@ -21,5 +21,13 @@ pipeline {
                 }
             }
         }
+        stage('Test') {
+            steps {
+                script {
+                    // Use curl to check if the website is live and running
+                    sh "curl -s http://localhost:80"
+                }
+            }
+        }
     }
 }
